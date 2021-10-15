@@ -1,54 +1,89 @@
-﻿using FBLARoverAgenda.Models;
-using FBLARoverAgenda.Services;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace FBLARoverAgenda.ViewModels
 {
+    /// <summary>
+    /// This viewmodel extends in another viewmodels.
+    /// </summary>
+    [Preserve(AllMembers = true)]
+    [DataContract]
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        #region Fields
 
-        bool isBusy = false;
-        public bool IsBusy
+        private Command<object> backButtonCommand;
+
+        #endregion
+
+        #region Event handler
+
+        /// <summary>
+        /// Occurs when the property is changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+
+        #region Commands
+
+        /// <summary>
+        /// Gets the command that will be executed when an item is selected.
+        /// </summary>
+        public Command<object> BackButtonCommand
         {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            get
+            {
+                return this.backButtonCommand ?? (this.backButtonCommand = new Command<object>(this.BackButtonClicked));
+            }
         }
 
-        string title = string.Empty;
-        public string Title
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The PropertyChanged event occurs when changing the value of property.
+        /// </summary>
+        /// <param name="propertyName">The PropertyName</param>
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            get { return title; }
-            set { SetProperty(ref title, value); }
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName] string propertyName = "",
-            Action onChanged = null)
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
+            if (EqualityComparer<T>.Default.Equals(storage, value))
+            {
                 return false;
+            }
 
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
+            storage = value;
+            this.NotifyPropertyChanged(propertyName);
+
             return true;
         }
 
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        /// <summary>
+        /// Invoked when an back button is clicked.
+        /// </summary>
+        /// <param name="obj">The Object</param>
+        private void BackButtonClicked(object obj)
         {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (Device.RuntimePlatform == Device.UWP && Application.Current.MainPage.Navigation.NavigationStack.Count > 1)
+            {
+                Application.Current.MainPage.Navigation.PopAsync();
+            }
+            else if (Device.RuntimePlatform != Device.UWP && Application.Current.MainPage.Navigation.NavigationStack.Count > 0)
+            {
+                Application.Current.MainPage.Navigation.PopAsync();
+            }
         }
+
         #endregion
     }
 }

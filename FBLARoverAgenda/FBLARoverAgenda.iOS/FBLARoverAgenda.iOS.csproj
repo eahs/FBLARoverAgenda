@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{59A0F1DF-F115-46B7-B154-204F01F6B641}</ProjectGuid>
+    <ProjectGuid>{45DB79F1-A9EC-4950-8DA1-A94EEF3F9E74}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,14 +133,72 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons">
+      <Version>19.3.0.45</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.Core">
+      <Version>19.3.0.45</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
+      <Version>19.3.0.45</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView">
+      <Version>19.3.0.45</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfRating">
+      <Version>19.3.0.45</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\FBLARoverAgenda\FBLARoverAgenda.csproj">
-      <Project>{2402D35F-C6E3-4BAD-ADB7-093B06E0643E}</Project>
+      <Project>{118484EC-68A6-479C-80DA-F2CC17B628EB}</Project>
       <Name>FBLARoverAgenda</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape%402x~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape%403x~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape%404x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground-Landscape~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground%402x~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground%403x~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground%404x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginBackground~ipad.png" />
+  </ItemGroup>
+  <ItemGroup />
 </Project>
