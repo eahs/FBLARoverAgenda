@@ -1,3 +1,6 @@
+using Syncfusion.XForms.iOS.EffectsView;
+using Syncfusion.XForms.iOS.TabView;
+using Syncfusion.XForms.iOS.Graphics;
 using Syncfusion.SfRating.XForms.iOS;
 using Syncfusion.ListView.XForms.iOS;
 using Syncfusion.XForms.iOS.ComboBox;
@@ -31,6 +34,9 @@ namespace FBLARoverAgenda.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            SfEffectsViewRenderer.Init();
+            SfTabViewRenderer.Init();
+            Core.Init();
             SfRatingRenderer.Init();
             SfListViewRenderer.Init();
             SfComboBoxRenderer.Init();

@@ -66,6 +66,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
+    <Compile Include="Renderers\FrameShadowRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,6 +149,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfRating">
       <Version>19.3.0.45</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView">
+      <Version>19.3.0.45</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
@@ -200,5 +204,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\LoginBackground~ipad.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\OurTeam.png" />
+  </ItemGroup>
 </Project>

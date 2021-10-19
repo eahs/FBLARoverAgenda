@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="FBLARoverAgenda.Views.LoginPage"
+    x:Class="FBLARoverAgenda.Views.SignUpPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behaviour="clr-namespace:FBLARoverAgenda.Behaviors"
@@ -12,10 +12,11 @@
     xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:FBLARoverAgenda.Views"
     xmlns:viewModel="clr-namespace:FBLARoverAgenda.ViewModels"
+    Title="Sign Up"
     BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
                                                                   iOSPhoneLandscape=LoginBackground-Landscape.png,
                                                                   iOSTabletLandscape=LoginBackground-Landscape.png}"
-    NavigationPage.HasNavigationBar="True">
+    NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -25,9 +26,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <!--  Binding context for login page  -->
+    <!--  Binding context for sign-up page  -->
     <ContentPage.BindingContext>
-        <viewModel:LoginPageViewModel />
+        <viewModel:SignUpPageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -52,31 +53,68 @@
                     VerticalOptions="FillAndExpand"
                     WidthRequest="{OnPlatform Default='-1',
                                               UWP='350'}">
-
-                    <Grid
-                        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-                        RowSpacing="0"
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Spacing="24"
                         VerticalOptions="CenterAndExpand">
 
                         <!--  Label to display the title of this page  -->
                         <Label
                             FontSize="20"
                             Style="{StaticResource TitleLabelStyle}"
-                            Text="Log In"
+                            Text="Sign Up"
                             TextColor="{DynamicResource Gray-White}" />
 
                         <!--  Label to display the description of this page  -->
                         <Label
-                            Grid.Row="1"
-                            Margin="0,8"
+                            Margin="0,-16,0,8"
                             Style="{StaticResource DescriptionLabelStyle}"
-                            Text="Let's get to work"
+                            Text="Create an account to start doing more"
                             TextColor="{DynamicResource Gray-White}" />
 
-                        <!--  Entry to get email ID from user  -->
-                        <local:EmailEntry Grid.Row="2" Padding="0,24" />
+                        <StackLayout>
+                            <!--  Entry to get username from user  -->
+                            <border:SfBorder BorderColor="{Binding Source={x:Reference NameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}" Style="{StaticResource LoginFormBorderlessEntryBorderStyle}">
+                                <Grid ColumnDefinitions="*, Auto">
 
-                        <StackLayout Grid.Row="3">
+                                    <control:BorderlessEntry
+                                        x:Name="NameEntry"
+                                        Margin="15,0"
+                                        HeightRequest="40"
+                                        Placeholder="Name"
+                                        PlaceholderColor="{StaticResource EntryPlaceholderColor}"
+                                        Style="{StaticResource BorderlessEntryStyle}"
+                                        Text="{Binding Name.Value}"
+                                        TextColor="{StaticResource Gray-White}">
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding Name.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
+
+                                    <!--  Label to display error icon  -->
+                                    <Label
+                                        Grid.Column="1"
+                                        IsVisible="{Binding Path=IsVisible, Source={x:Reference NameValidationLabel}}"
+                                        Style="{StaticResource ErrorIconLabelStyle}"
+                                        Text="{StaticResource Error}" />
+                                </Grid>
+                            </border:SfBorder>
+
+                            <!--  Label to display error message  -->
+                            <Label
+                                x:Name="NameValidationLabel"
+                                Margin="15,-3,0,0"
+                                IsVisible="{Binding Name.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                                Style="{StaticResource SimpleLabelStyle}"
+                                Text="{Binding Name.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                                TextColor="{DynamicResource Red}"
+                                VerticalOptions="FillAndExpand" />
+                        </StackLayout>
+
+                        <!--  Entry to get email ID from user  -->
+                        <local:EmailEntry />
+
+                        <StackLayout>
                             <!--  Entry to get password from user  -->
                             <border:SfBorder BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}" Style="{StaticResource LoginFormBorderlessEntryBorderStyle}">
                                 <Grid ColumnDefinitions="*, Auto">
@@ -85,14 +123,14 @@
                                         x:Name="PasswordEntry"
                                         Margin="15,0"
                                         HeightRequest="40"
-                                        IsPassword="True"
+                                        IsPassword="true"
                                         Placeholder="Password"
                                         PlaceholderColor="{StaticResource EntryPlaceholderColor}"
                                         Style="{StaticResource BorderlessEntryStyle}"
-                                        Text="{Binding Password.Value}"
+                                        Text="{Binding Password.Item1.Value}"
                                         TextColor="{StaticResource Gray-White}">
                                         <Entry.Behaviors>
-                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding Password.IsValid}" />
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding Password.Item1.IsValid}" />
                                         </Entry.Behaviors>
                                     </control:BorderlessEntry>
 
@@ -109,71 +147,60 @@
                             <Label
                                 x:Name="PasswordValidationLabel"
                                 Margin="15,-3,0,0"
-                                IsVisible="{Binding Password.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                                IsVisible="{Binding Password.Item1.IsValid, Converter={StaticResource InverseBoolConverter}}"
                                 Style="{StaticResource SimpleLabelStyle}"
-                                Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                                Text="{Binding Password.Item1.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                                 TextColor="{DynamicResource Red}"
                                 VerticalOptions="FillAndExpand" />
                         </StackLayout>
 
-                        <!--  Forgot password link  -->
-                        <buttons:SfButton
-                            x:Name="ForgotPasswordLabel"
-                            Grid.Row="4"
-                            Margin="0,16"
-                            Command="{Binding ForgotPasswordCommand}"
-                            FontSize="12"
-                            HorizontalOptions="End"
-                            Style="{StaticResource TransparentButtonStyle}"
-                            Text="FORGOT PASSWORD?"
-                            TextColor="{DynamicResource Gray-White}" />
+                        <StackLayout>
+                            <!--  Entry to get the confirm password from user  -->
+                            <border:SfBorder BorderColor="{Binding Source={x:Reference ConfirmPasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}" Style="{StaticResource LoginFormBorderlessEntryBorderStyle}">
+                                <Grid ColumnDefinitions="*, Auto">
 
+                                    <control:BorderlessEntry
+                                        x:Name="ConfirmPasswordEntry"
+                                        Margin="15,0"
+                                        HeightRequest="40"
+                                        IsPassword="true"
+                                        Placeholder="Confirm Password"
+                                        PlaceholderColor="{StaticResource EntryPlaceholderColor}"
+                                        Style="{StaticResource BorderlessEntryStyle}"
+                                        Text="{Binding Password.Item2.Value}"
+                                        TextColor="{StaticResource Gray-White}">
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding Password.Item2.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
 
-                        <!--  Login button  -->
+                                    <!--  Label to display error icon  -->
+                                    <Label
+                                        Grid.Column="1"
+                                        IsVisible="{Binding Path=IsVisible, Source={x:Reference ConfirmPasswordValidationLabel}}"
+                                        Style="{StaticResource ErrorIconLabelStyle}"
+                                        Text="{StaticResource Error}" />
+                                </Grid>
+                            </border:SfBorder>
+
+                            <!--  Label to display error message  -->
+                            <Label
+                                x:Name="ConfirmPasswordValidationLabel"
+                                Margin="15,-3,0,0"
+                                IsVisible="{Binding Password.Item2.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                                Style="{StaticResource SimpleLabelStyle}"
+                                Text="{Binding Password.Item2.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                                TextColor="{DynamicResource Red}"
+                                VerticalOptions="FillAndExpand" />
+                        </StackLayout>
+
+                        <!--  Sign-up button  -->
                         <buttons:SfButton
-                            Grid.Row="5"
-                            Margin="0,16"
-                            Command="{Binding LoginCommand}"
-                            HorizontalOptions="Fill"
+                            Command="{Binding SignUpCommand}"
+                            HorizontalOptions="FillAndExpand"
                             Style="{StaticResource GradientButtonStyle}"
-                            Text="LOG IN" />
-
-
-                        <Label
-                            Grid.Row="6"
-                            Style="{StaticResource DescriptionLabelStyle}"
-                            Text="Or log in with your Facebook credentials"
-                            TextColor="{DynamicResource Gray-White}" />
-
-                        <!--  Login through facebook account  -->
-                        <buttons:SfButton
-                            Grid.Row="7"
-                            Margin="0,16,0,16"
-                            BackgroundColor="{DynamicResource FacebookBlue}"
-                            Command="{Binding SocialMediaLoginCommand}"
-                            CornerRadius="20"
-                            HeightRequest="40">
-                            <buttons:SfButton.Content>
-                                <StackLayout
-                                    HorizontalOptions="CenterAndExpand"
-                                    Orientation="Horizontal"
-                                    VerticalOptions="Center">
-                                    <Label
-                                        FontFamily="FontIcons"
-                                        FontSize="18"
-                                        Text="&#xe735;"
-                                        TextColor="{DynamicResource Gray-White}"
-                                        VerticalTextAlignment="Center" />
-                                    <Label
-                                        FontFamily="Montserrat-Medium"
-                                        FontSize="16"
-                                        Text="Log In with Facebook"
-                                        TextColor="{DynamicResource Gray-White}" />
-                                </StackLayout>
-                            </buttons:SfButton.Content>
-                        </buttons:SfButton>
-
-                    </Grid>
+                            Text="REGISTER" />
+                    </StackLayout>
 
                     <StackLayout
                         HorizontalOptions="Center"
@@ -190,19 +217,17 @@
 
                         <Label
                             Style="{StaticResource DescriptionLabelStyle}"
-                            Text="Don't have an account?"
+                            Text="Already have an account?"
                             TextColor="{DynamicResource Gray-White}"
                             VerticalTextAlignment="Center" />
 
-                        <!--  Sign-up button  -->
                         <buttons:SfButton
-                            Command="{Binding SignUpCommand}"
+                            Command="{Binding LoginCommand}"
                             Style="{StaticResource TransparentButtonStyle}"
-                            Text="Sign Up"
+                            Text="Log In"
                             TextColor="{DynamicResource PrimaryColor}" />
 
                     </StackLayout>
-
                 </StackLayout>
             </ScrollView>
 
@@ -219,5 +244,4 @@
 
         </Grid>
     </ContentPage.Content>
-
 </ContentPage>
