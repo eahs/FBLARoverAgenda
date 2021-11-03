@@ -14,7 +14,7 @@ namespace FBLARoverAgenda.Views
         public CurrentTeachersListPage()
         {
             this.InitializeComponent();
-            this.BindingContext = CurrentTeachersListPageDataService.Instance.CurrentTeachersListPageViewModel;
+            //this.BindingContext = CurrentTeachersListPageDataService.Instance.CurrentTeachersListPageViewModel;
         }
     }
 }

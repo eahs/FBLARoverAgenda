@@ -51,7 +51,7 @@
                         FontFamily="Montserrat-Medium"
                         HorizontalOptions="FillAndExpand"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="Movies List"
+                        Text="Current Teachers"
                         VerticalOptions="Center"
                         VerticalTextAlignment="Center" />
 
