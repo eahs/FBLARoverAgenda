@@ -26,29 +26,11 @@
             <RowDefinition Height="{OnIdiom Default=1, Phone=0}" />
         </Grid.RowDefinitions>
 
-        <!--  Product image  -->
-        <Image
-            Grid.Row="0"
-            Grid.RowSpan="4"
-            Grid.Column="0"
-            Margin="16,8,16,16"
-            Aspect="Fill"
-            BackgroundColor="{DynamicResource Gray-200}"
-            HeightRequest="80"
-            WidthRequest="80">
-            <Image.Source>
-                <UriImageSource
-                    CacheValidity="14"
-                    CachingEnabled="true"
-                    Uri="{Binding ProductImage}" />
-            </Image.Source>
-        </Image>
-
-        <!--  Product name  -->
+        <!--  Class name  -->
         <Label
             Grid.Row="0"
-            Grid.Column="1"
-            Margin="0,8,0,4"
+            Grid.Column="0"
+            Margin="16,8,0,16"
             FontFamily="Montserrat-SemiBold"
             FontSize="14"
             HorizontalOptions="StartAndExpand"
@@ -58,11 +40,11 @@
             Text="{Binding Name}"
             TextColor="{DynamicResource Gray-900}" />
 
-        <!--  Description label  -->
+        <!--  Teacher  -->
         <Label
             Grid.Row="1"
-            Grid.Column="1"
-            Margin="0,0,0,8"
+            Grid.Column="0"
+            Margin="16,0,0,4"
             FontFamily="Montserrat-Medium"
             FontSize="12"
             HorizontalOptions="StartAndExpand"
@@ -70,16 +52,29 @@
             Text="{Binding Description}"
             TextColor="{DynamicResource Gray-700}" />
 
-        <!--  Order ID  -->
+        <!--  Room  -->
         <Label
             Grid.Row="2"
-            Grid.Column="1"
+            Grid.Column="0"
+            Margin="16,0,0,4"
             FontFamily="Montserrat-Medium"
             FontSize="12"
-            HorizontalOptions="Start"
-            Text="{Binding OrderID, StringFormat='Order ID: {0}'}"
-            VerticalOptions="Center"
-            TextColor="{DynamicResource Gray-700}"/>
+            HorizontalOptions="StartAndExpand"
+            LineHeight="1.5"
+            Text="{Binding Description}"
+            TextColor="{DynamicResource Gray-700}" />
+
+        <!--  Time  -->
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="16,0,0,16"
+            FontFamily="Montserrat-Medium"
+            FontSize="12"
+            HorizontalOptions="StartAndExpand"
+            LineHeight="1.5"
+            Text="{Binding Description}"
+            TextColor="{DynamicResource Gray-700}" />
 
     </Grid>
 </Grid>

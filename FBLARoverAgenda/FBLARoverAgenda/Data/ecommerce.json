@@ -37,7 +37,7 @@
     {
       "id": "2",
       "previewimage": "Image2.png",
-      "name": "Peasant Blouse",
+      "name": "Math",
       "summary": "Look your best this fall in this V-neck, pleated peasant blouse with full sleeves. Comes in white, chocolate, forest green, and more.",
       "description": "Look your best this fall in this V-neck, pleated peasant blouse with full sleeves. Comes in white, chocolate, forest green, and more.",
       "actualprice": "285",
@@ -216,25 +216,39 @@
 
   "orders": [
     {
-      "orderid": "83533963",
-      "productimage": "Image1.png",
-      "name": "Full-Length Skirt",
-      "description": "Delivery expected on 10 Aug 2019.",
-      "status": "Dispatched"
+        "orderid": "83533963",
+        "productimage": "Image1.png",
+        "name": "Block 1",
+        "description": "[Description]",
+        "status": "Dispatched"
     },
     {
       "orderid": "63428737",
       "productimage": "Image2.png",
-      "name": "Peasant Blouse",
-      "description": "Order was cancelled.",
+      "name": "Block 2",
+      "description": "[Description]",
       "status": "Cancelled"
     },
     {
-      "orderid": "83658319",
-      "productimage": "Image3.png",
-      "name": "High-Waisted Skirt",
-      "description": "Delivered on 04 Aug 2019.",
-      "status": "Completed"
+        "orderid": "83658319",
+        "productimage": "Image3.png",
+        "name": "Block 3",
+        "description": "[Description]",
+        "status": "Completed"
+    },
+    {
+        "orderid": "83658319",
+        "productimage": "Image3.png",
+        "name": "Block 4",
+        "description": "[Description]",
+        "status": "Completed"
+    },
+    {
+        "orderid": "83658319",
+        "productimage": "Image3.png",
+        "name": "Block 5",
+        "description": "[Description]",
+        "status": "Completed"
     }
   ],
 
