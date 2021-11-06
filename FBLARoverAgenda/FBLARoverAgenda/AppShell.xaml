@@ -84,8 +84,8 @@
     <FlyoutItem Title = "My Teachers" Route="MyTeachers">
         <ShellContent ContentTemplate="{DataTemplate local:CurrentTeachersListPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title = "Extracurricular" Route="Extracurriculars">
-        <ShellContent ContentTemplate="{DataTemplate local:CurrentTeachersListPage}"/>
+    <FlyoutItem Title = "Extracurriculars" Route="Extracurriculars">
+        <ShellContent ContentTemplate="{DataTemplate local:AllClubsPage}"/>
     </FlyoutItem>
     <FlyoutItem Title = "Settings" Route="Settings">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}"/>

@@ -214,41 +214,36 @@
     }
   ],
 
-  "orders": [
+  "classes": [
     {
-        "orderid": "83533963",
-        "productimage": "Image1.png",
-        "name": "Block 1",
-        "description": "[Description]",
-        "status": "Dispatched"
+        "name": "English",
+        "block": "Block 1",
+        "room": "C207",
+        "teacher": "Mrs. Mohap"
     },
     {
-      "orderid": "63428737",
-      "productimage": "Image2.png",
-      "name": "Block 2",
-      "description": "[Description]",
-      "status": "Cancelled"
+        "name": "History",
+        "block": "Block 2",
+        "room": "D202",
+        "teacher": "Mr. Uhler"
     },
     {
-        "orderid": "83658319",
-        "productimage": "Image3.png",
-        "name": "Block 3",
-        "description": "[Description]",
-        "status": "Completed"
+        "name": "Lunch",
+        "block": "Block 3",
+        "room": "Cafeteria",
+        "teacher": "N/A"
     },
     {
-        "orderid": "83658319",
-        "productimage": "Image3.png",
-        "name": "Block 4",
-        "description": "[Description]",
-        "status": "Completed"
+        "name": "Algebra",
+        "block": "Block 4",
+        "room": "E109",
+        "teacher": "Mrs. McFarland"
     },
     {
-        "orderid": "83658319",
-        "productimage": "Image3.png",
-        "name": "Block 5",
-        "description": "[Description]",
-        "status": "Completed"
+        "name": "Biology",
+        "block": "Block 1",
+        "room": "J215",
+        "teacher": "Mr. Brown"
     }
   ],
 

@@ -12,21 +12,9 @@ namespace FBLARoverAgenda.Models
     {
         #region Fields
 
-        private string productImage;
-
         #endregion
 
         #region Properties
-
-        /// <summary>
-        /// Gets or sets the property that has been bound with Xamarin.Forms Image, which displays the product image.
-        /// </summary>
-        [DataMember(Name = "productimage")]
-        public string ProductImage
-        {
-            get { return App.ImageServerPath + this.productImage; }
-            set { this.productImage = value; }
-        }
 
         /// <summary>
         /// Gets or sets the property that has been bound with a label, which displays the product name.
@@ -37,20 +25,20 @@ namespace FBLARoverAgenda.Models
         /// <summary>
         /// Gets or sets the property that has been bound with a label, which displays the order description.
         /// </summary>
-        [DataMember(Name = "description")]
-        public string Description { get; set; }
+        [DataMember(Name = "block")]
+        public string Block { get; set; }
 
         /// <summary>
         /// Gets or sets the property that has been bound with a label, which displays the status of the order.
         /// </summary>
-        [DataMember(Name = "status")]
-        public string Status { get; set; }
+        [DataMember(Name = "room")]
+        public string Room { get; set; }
 
         /// <summary>
         /// Gets or sets the property that has been bound with a label, which displays the order id.
         /// </summary>
-        [DataMember(Name = "orderid")]
-        public string OrderID { get; set; }
+        [DataMember(Name = "teacher")]
+        public string Teacher { get; set; }
 
         #endregion
     }

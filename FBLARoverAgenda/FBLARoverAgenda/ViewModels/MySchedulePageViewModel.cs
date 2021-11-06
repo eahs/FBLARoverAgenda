@@ -28,7 +28,7 @@ namespace FBLARoverAgenda.ViewModels
         /// <summary>
         /// Gets or sets the property that has been bound with list view, which displays the collection of orders from json.
         /// </summary>
-        [DataMember(Name = "orders")]
+        [DataMember(Name = "classes")]
         public ObservableCollection<Orders> MyOrders
         {
             get

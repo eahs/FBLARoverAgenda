@@ -104,7 +104,7 @@
                                             Text="{Binding Name}"
                                             TextColor="{DynamicResource Gray-900}" />
 
-                                        <!--  Teacher  -->
+                                        <!--  Block #  -->
                                         <Label
                                             Grid.Row="1"
                                             Grid.Column="0"
@@ -113,7 +113,7 @@
                                             FontSize="12"
                                             HorizontalOptions="StartAndExpand"
                                             LineHeight="1.5"
-                                            Text="{Binding Description}"
+                                            Text="{Binding Block}"
                                             TextColor="{DynamicResource Gray-700}" />
 
                                         <!--  Room  -->
@@ -125,10 +125,10 @@
                                             FontSize="12"
                                             HorizontalOptions="StartAndExpand"
                                             LineHeight="1.5"
-                                            Text="{Binding Description}"
+                                            Text="{Binding Room}"
                                             TextColor="{DynamicResource Gray-700}" />
 
-                                        <!--  Time  -->
+                                        <!--  Teacher  -->
                                         <Label
                                             Grid.Row="3"
                                             Grid.Column="0"
@@ -137,7 +137,7 @@
                                             FontSize="12"
                                             HorizontalOptions="StartAndExpand"
                                             LineHeight="1.5"
-                                            Text="{Binding Description}"
+                                            Text="{Binding Teacher}"
                                             TextColor="{DynamicResource Gray-700}" />
                                     </Grid>
                                 </syncEffectsView:SfEffectsView>

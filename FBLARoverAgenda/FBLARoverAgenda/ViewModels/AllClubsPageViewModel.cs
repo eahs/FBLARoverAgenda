@@ -43,8 +43,8 @@ namespace FBLARoverAgenda.ViewModels
         public static AllClubsPageViewModel BindingContext =>
             myAddressViewModel = PopulateData<AllClubsPageViewModel>("detail.json");
 
-        [DataMember(Name = "addressDetails")]
-        public ObservableCollection<Address> AddressDetails { get; set; }
+        [DataMember(Name = "clubDetails")]
+        public ObservableCollection<Address> ClubDetails { get; set; }
 
         #endregion
 

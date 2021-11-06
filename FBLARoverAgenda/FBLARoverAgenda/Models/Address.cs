@@ -18,10 +18,10 @@ namespace FBLARoverAgenda.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the address type.
+        /// Gets or sets the advisor name.
         /// </summary>
-        [DataMember(Name = "addressType")]
-        public string AddressType { get; set; }
+        [DataMember(Name = "advisorName")]
+        public string AdvisorName { get; set; }
 
         /// <summary>
         /// Gets or sets the location.
@@ -30,10 +30,10 @@ namespace FBLARoverAgenda.Models
         public string Location { get; set; }
 
         /// <summary>
-        /// Gets or sets the contact number.
+        /// Gets or sets the advisor email.
         /// </summary>
-        [DataMember(Name = "contactNumber")]
-        public string ContactNumber { get; set; }
+        [DataMember(Name = "advisorEmail")]
+        public string AdvisorEmail { get; set; }
 
         #endregion
     }
