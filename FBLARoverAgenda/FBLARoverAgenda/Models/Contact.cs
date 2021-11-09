@@ -18,6 +18,12 @@ namespace FBLARoverAgenda.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the email of the item.
+        /// </summary>
+        [DataMember(Name = "email")]
+        public string Email { get; set; }
+
+        /// <summary>
         /// Gets or sets the background color for the contacts inside avatar view.
         /// </summary>
         [DataMember(Name = "backgroundColor")]

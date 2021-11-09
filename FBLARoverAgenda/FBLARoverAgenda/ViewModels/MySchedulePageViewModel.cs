@@ -51,7 +51,7 @@ namespace FBLARoverAgenda.ViewModels
         /// <summary>
         /// Gets the property that has been bound with a list view, which displays the order details in list.
         /// </summary>
-        public ObservableCollection<Orders> OrderDetails
+        public ObservableCollection<Orders> ClassDetails
         {
             get
             {
@@ -103,10 +103,10 @@ namespace FBLARoverAgenda.ViewModels
         /// <param name="items">Ordered items</param>
         private void GetProducts(ObservableCollection<Orders> items)
         {
-            this.OrderDetails = new ObservableCollection<Orders>();
+            this.ClassDetails = new ObservableCollection<Orders>();
             if (items != null && items.Count > 0)
             {
-                this.OrderDetails = items;
+                this.ClassDetails = items;
             }
         }
 

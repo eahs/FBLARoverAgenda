@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="FBLARoverAgenda.Views.CurrentTeachersListPage"
+    x:Class="FBLARoverAgenda.Views.TeachersListPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
@@ -51,7 +51,7 @@
                         FontFamily="Montserrat-Medium"
                         HorizontalOptions="FillAndExpand"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="Current Teachers"
+                        Text="Movies List"
                         VerticalOptions="Center"
                         VerticalTextAlignment="Center" />
 
@@ -78,7 +78,7 @@
                     <border:SfBorder Style="{DynamicResource ThemeBorderStyle}">
                         <controls:BorderlessEntry
                             x:Name="SearchEntry"
-                            BindingContext="{x:Reference NamesList}"
+                            BindingContext="{x:Reference MoviesList}"
                             HorizontalOptions="FillAndExpand"
                             Placeholder="Search here"
                             Style="{StaticResource BorderlessEntryStyle}"
@@ -107,7 +107,7 @@
                     AutoFitMode="Height"
                     IsScrollBarVisible="False"
                     ItemSpacing="0"
-                    ItemsSource="{Binding NamesList}"
+                    ItemsSource="{Binding MoviesList}"
                     SearchText="{Binding SearchText}"
                     SelectionBackgroundColor="{DynamicResource Gray-200}"
                     SelectionGesture="Tap"
@@ -136,7 +136,7 @@
                                             LineBreakMode="TailTruncation"
                                             LineHeight="{OnPlatform Android=1.5,
                                                                     Default=-1}"
-                                            Text="{Binding Name}"
+                                            Text="{Binding MovieName}"
                                             TextColor="{DynamicResource Gray-900}"
                                             VerticalOptions="Center"
                                             VerticalTextAlignment="Center" />
@@ -146,7 +146,7 @@
                                             FontSize="14"
                                             LineHeight="{OnPlatform Android=1.5,
                                                                     Default=-1}"
-                                            Text="{Binding Name}"
+                                            Text="{Binding MovieYear}"
                                             TextColor="{DynamicResource Gray-700}"
                                             VerticalOptions="FillAndExpand"
                                             VerticalTextAlignment="Center" />
@@ -175,7 +175,7 @@
                                                 FontSize="12"
                                                 LineHeight="{OnPlatform Android=1.5,
                                                                         Default=-1}"
-                                                Text="{StaticResource Name}"
+                                                Text="{StaticResource Rating}"
                                                 TextColor="{DynamicResource Gray-White}"
                                                 VerticalOptions="Center"
                                                 VerticalTextAlignment="Center" />
@@ -186,7 +186,7 @@
                                                 HorizontalOptions="Start"
                                                 LineHeight="{OnPlatform Android=1.5,
                                                                         Default=-1}"
-                                                Text="{Binding Name}"
+                                                Text="{Binding MovieRating}"
                                                 TextColor="{DynamicResource Gray-White}"
                                                 VerticalTextAlignment="Center" />
 

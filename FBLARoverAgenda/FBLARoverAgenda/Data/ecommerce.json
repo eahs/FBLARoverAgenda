@@ -219,7 +219,7 @@
         "name": "English",
         "block": "Block 1",
         "room": "C207",
-        "teacher": "Mrs. Mohap"
+        "teacher": "Ms. Hudak"
     },
     {
         "name": "History",
@@ -234,16 +234,16 @@
         "teacher": "N/A"
     },
     {
-        "name": "Algebra",
+        "name": "Precalculus",
         "block": "Block 4",
         "room": "E109",
-        "teacher": "Mrs. McFarland"
+        "teacher": "Ms. Hammerstone"
     },
     {
-        "name": "Biology",
-        "block": "Block 1",
+        "name": "Physics",
+        "block": "Block 5",
         "room": "J215",
-        "teacher": "Mr. Brown"
+        "teacher": "Mr. Kazan"
     }
   ],
 

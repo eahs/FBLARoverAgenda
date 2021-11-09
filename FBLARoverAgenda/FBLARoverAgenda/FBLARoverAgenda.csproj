@@ -137,6 +137,9 @@
     <EmbeddedResource Update="Views\SignUpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\TeachersListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\OrderHistoryTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

@@ -361,50 +361,32 @@
     }
   ],
 
-  "namesListPage": [
-    {
-      "name": "Alora Elliot"
-    },
-    {
-      "name": "Arden Noelle"
-    },
-    {
-      "name": "Austin Bradley"
-    },
-    {
-      "name": "Aurelia Lilan "
-    },
-    {
-      "name": "Arthur Kim"
-    },
-    {
-      "name": "Bernard Daniels"
-    },
-    {
-      "name": "Bernard Rodriquez"
-    },
-    {
-      "name": "Barden Daniel"
-    },
-    {
-      "name": "Brandan Todd"
-    },
-    {
-      "name": "Charlotte Nash"
-    },
-    {
-      "name": "Carlos Esteban"
-    },
-    {
-      "name": "Christina Hanson"
-    },
-    {
-      "name": "Camila Sage"
-    },
-    {
-      "name": "Dustin Blake"
-    }
-  ],
+    "namesListPage": [
+        {
+            "name": "Hammerstone Morgan",
+            "email": "hammerstonem@eastonsd.org"
+        },
+        {
+            "name": "Hudak Kristen",
+            "email": "hudakk@eastonsd.org"
+        },
+        {
+            "name": "Kazan Brandon",
+            "email": "kazanb@eastonsd.org"
+        },
+        {
+            "name": "Klein Beverly",
+            "email": "kleinb@eastonsd.org"
+        },
+        {
+            "name": "Tanczos Michael",
+            "email": "tanczosm@eastonsd.org"
+        },
+        {
+            "name": "Uhler Richard",
+            "email": "uhlerr@eastonsd.org"
+        }
+    ],
   "contactsPageList": [
     {
       "name": "Aaron Thorsson",

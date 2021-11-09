@@ -64,7 +64,7 @@
                         x:Name="myOrderList"
                         AutoFitMode="DynamicHeight"
                         BackgroundColor="{DynamicResource Gray-100}"
-                        ItemsSource="{Binding OrderDetails}"
+                        ItemsSource="{Binding ClassDetails}"
                         SelectionMode="None"
                         VerticalOptions="Start">
 
