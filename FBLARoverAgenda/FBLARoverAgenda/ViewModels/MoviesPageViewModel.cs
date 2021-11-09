@@ -47,8 +47,8 @@ namespace FBLARoverAgenda.ViewModels
         /// <summary>
         /// Gets or sets a collction of value to be displayed in movies list page.
         /// </summary>
-        [DataMember(Name = "moviesPageList")]
-        public ObservableCollection<Movie> MoviesList { get; set; }
+        [DataMember(Name = "teachersList")]
+        public ObservableCollection<Movie> TeachersList { get; set; }
 
         #endregion
 

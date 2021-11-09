@@ -20,13 +20,13 @@ namespace FBLARoverAgenda.Controls
             if (base.FilterContacts(obj))
             {
                 var taskInfo = obj as Models.Movie;
-                if (taskInfo == null || string.IsNullOrEmpty(taskInfo.MovieName) || string.IsNullOrEmpty(taskInfo.MovieYear))
+                if (taskInfo == null || string.IsNullOrEmpty(taskInfo.TeacherName) || string.IsNullOrEmpty(taskInfo.TeacherName))
                 {
                     return false;
                 }
 
-                return taskInfo.MovieName.ToUpperInvariant().Contains(this.SearchText.ToUpperInvariant())
-                       || taskInfo.MovieYear.ToUpperInvariant().Contains(this.SearchText.ToUpperInvariant());
+                return taskInfo.TeacherName.ToUpperInvariant().Contains(this.SearchText.ToUpperInvariant())
+                       || taskInfo.TeacherName.ToUpperInvariant().Contains(this.SearchText.ToUpperInvariant());
             }
 
             return false;

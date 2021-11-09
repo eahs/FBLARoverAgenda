@@ -17,20 +17,14 @@ namespace FBLARoverAgenda.Models
         /// <summary>
         /// Gets or sets the movie name.
         /// </summary>
-        [DataMember(Name = "moviename")]
-        public string MovieName { get; set; }
+        [DataMember(Name = "name")]
+        public string TeacherName { get; set; }
 
         /// <summary>
         /// Gets or sets the release year of the movie.
         /// </summary>
-        [DataMember(Name = "movieyear")]
-        public string MovieYear { get; set; }
-
-        /// <summary>
-        /// Gets or sets the rating of the movie.
-        /// </summary>
-        [DataMember(Name = "movierating")]
-        public string MovieRating { get; set; }
+        [DataMember(Name = "email")]
+        public string TeacherEmail { get; set; }
 
         /// <summary>
         /// Gets or sets the  image of the movie.

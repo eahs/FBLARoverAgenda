@@ -51,7 +51,7 @@
                         FontFamily="Montserrat-Medium"
                         HorizontalOptions="FillAndExpand"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="Movies List"
+                        Text="Teachers"
                         VerticalOptions="Center"
                         VerticalTextAlignment="Center" />
 
@@ -107,7 +107,7 @@
                     AutoFitMode="Height"
                     IsScrollBarVisible="False"
                     ItemSpacing="0"
-                    ItemsSource="{Binding MoviesList}"
+                    ItemsSource="{Binding TeachersList}"
                     SearchText="{Binding SearchText}"
                     SelectionBackgroundColor="{DynamicResource Gray-200}"
                     SelectionGesture="Tap"
@@ -136,7 +136,7 @@
                                             LineBreakMode="TailTruncation"
                                             LineHeight="{OnPlatform Android=1.5,
                                                                     Default=-1}"
-                                            Text="{Binding MovieName}"
+                                            Text="{Binding TeacherName}"
                                             TextColor="{DynamicResource Gray-900}"
                                             VerticalOptions="Center"
                                             VerticalTextAlignment="Center" />
@@ -146,7 +146,7 @@
                                             FontSize="14"
                                             LineHeight="{OnPlatform Android=1.5,
                                                                     Default=-1}"
-                                            Text="{Binding MovieYear}"
+                                            Text="{Binding TeacherEmail}"
                                             TextColor="{DynamicResource Gray-700}"
                                             VerticalOptions="FillAndExpand"
                                             VerticalTextAlignment="Center" />
@@ -158,7 +158,7 @@
                                         Grid.RowSpan="2"
                                         Grid.Column="1"
                                         Margin="16,24"
-                                        BackgroundColor="{DynamicResource LightGreen}"
+                                        BackgroundColor="#FF3618"
                                         BorderColor="Transparent"
                                         CornerRadius="12"
                                         HeightRequest="24"
@@ -172,22 +172,12 @@
                                             VerticalOptions="Center">
                                             <Label
                                                 FontFamily="FontIcons"
-                                                FontSize="12"
+                                                FontSize="20"
                                                 LineHeight="{OnPlatform Android=1.5,
                                                                         Default=-1}"
-                                                Text="{StaticResource Rating}"
-                                                TextColor="{DynamicResource Gray-White}"
+                                                Text="{StaticResource Mail}"
+                                                TextColor="{DynamicResource Gray-100}"
                                                 VerticalOptions="Center"
-                                                VerticalTextAlignment="Center" />
-
-                                            <Label
-                                                FontFamily="Montserrat-Medium"
-                                                FontSize="12"
-                                                HorizontalOptions="Start"
-                                                LineHeight="{OnPlatform Android=1.5,
-                                                                        Default=-1}"
-                                                Text="{Binding MovieRating}"
-                                                TextColor="{DynamicResource Gray-White}"
                                                 VerticalTextAlignment="Center" />
 
                                         </StackLayout>
