@@ -110,7 +110,7 @@
                     ItemsSource="{Binding TeachersList}"
                     SearchText="{Binding SearchText}"
                     SelectionBackgroundColor="{DynamicResource Gray-200}"
-                    SelectionGesture="Tap"
+                    SelectionGesture="DoubleTap"
                     SelectionMode="Single"
                     TapCommand="{Binding ItemTappedCommand}"
                     VerticalOptions="FillAndExpand">
@@ -165,23 +165,29 @@
                                         VerticalOptions="Center"
                                         WidthRequest="50">
 
-                                        <StackLayout
-                                            HorizontalOptions="Center"
-                                            Orientation="Horizontal"
-                                            Spacing="4.7"
-                                            VerticalOptions="Center">
-                                            <Label
-                                                FontFamily="FontIcons"
-                                                FontSize="20"
-                                                LineHeight="{OnPlatform Android=1.5,
-                                                                        Default=-1}"
-                                                Text="{StaticResource Mail}"
-                                                TextColor="{DynamicResource Gray-100}"
-                                                VerticalOptions="Center"
-                                                VerticalTextAlignment="Center" />
-
-                                        </StackLayout>
+                                        <buttons:SfButton
+                                            x:Name="editButton"
+                                            Grid.Column="2"
+                                            Command="{Binding Path=BindingContext.SendEmailCommand}"
+                                            CornerRadius="16"
+                                            HeightRequest="24"
+                                            HorizontalOptions="EndAndExpand"
+                                            Style="{StaticResource IconButtonStyle}"
+                                            TextColor="{DynamicResource Gray-900}"
+                                            VerticalOptions="StartAndExpand"
+                                            WidthRequest="50">
+                                            <buttons:SfButton.Content>
+                                                <Label
+                                                    FontFamily="FontIcons"
+                                                    FontSize="20"
+                                                    HorizontalOptions="Center"
+                                                    Text="{StaticResource Mail}"
+                                                    TextColor="{DynamicResource Gray-200}"
+                                                    VerticalOptions="Center" />
+                                            </buttons:SfButton.Content>
+                                        </buttons:SfButton>
                                     </border:SfBorder>
+
                                     <BoxView
                                         Grid.Row="1"
                                         Grid.ColumnSpan="2"
