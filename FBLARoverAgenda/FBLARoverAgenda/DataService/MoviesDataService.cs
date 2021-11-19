@@ -1,4 +1,6 @@
-﻿using FBLARoverAgenda.ViewModels;
+using FBLARoverAgenda.ViewModels;
+using Newtonsoft.Json;
+using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization.Json;
 using Xamarin.Forms.Internals;
@@ -30,9 +32,49 @@ namespace FBLARoverAgenda.DataService
         /// Gets or sets the value of movie page view model.
         /// </summary>
         public TeachersListPageViewModel TeachersListPageViewModel =>
-            this.moviesViewModel ??
-            (this.moviesViewModel = PopulateData<TeachersListPageViewModel>("navigation.json"));
+            this.moviesViewModel ?? LoadTeachers();
+            //(this.moviesViewModel = PopulateData<TeachersListPageViewModel>("navigation.json"));
 
+        public TeachersListPageViewModel LoadTeachers ()
+        {
+            TeachersListPageViewModel vm = new TeachersListPageViewModel
+            {
+                TeachersList = new System.Collections.ObjectModel.ObservableCollection<Models.Movie>()
+            };
+
+            vm.TeachersList.Add(new Models.Movie
+            {
+                TeacherName = "Hammerstone, Morgan",
+                TeacherEmail = "hammerstonem@eastonsd.org"
+            });
+            vm.TeachersList.Add(new Models.Movie
+            {
+                TeacherName = "Hudak, Kristen",
+                TeacherEmail = "hudakk@eastonsd.org"
+            });
+            vm.TeachersList.Add(new Models.Movie
+            {
+                TeacherName = "Kazan, Brandon",
+                TeacherEmail = "kazanb@eastonsd.org"
+            });
+            vm.TeachersList.Add(new Models.Movie
+            {
+                TeacherName = "Klein, Beverly",
+                TeacherEmail = "kazanb@eastonsd.org"
+            });
+            vm.TeachersList.Add(new Models.Movie
+            {
+                TeacherName = "Tanczos, Michael",
+                TeacherEmail = "tanczosm@eastonsd.org"
+            });
+            vm.TeachersList.Add(new Models.Movie
+            {
+                TeacherName = "Uhler, Richard",
+                TeacherEmail = "uhlerr@eastonsd.org"
+            });
+
+            return vm;
+        }
         #endregion
 
         #region Methods

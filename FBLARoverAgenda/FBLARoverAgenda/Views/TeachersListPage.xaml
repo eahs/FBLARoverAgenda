@@ -168,7 +168,7 @@
                                         <buttons:SfButton
                                             x:Name="editButton"
                                             Grid.Column="2"
-                                            Command="{Binding Path=BindingContext.SendEmailCommand}"
+                                            Command="{Binding EmailCommand}"
                                             CornerRadius="16"
                                             HeightRequest="24"
                                             HorizontalOptions="EndAndExpand"
