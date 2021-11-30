@@ -14,7 +14,7 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource PrimaryColor}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
@@ -41,12 +41,12 @@
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{DynamicResource PrimaryColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -63,7 +63,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{DynamicResource PrimaryColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -80,6 +80,9 @@
     -->
     <FlyoutItem Title = "Schedule" Route="Schedule">
         <ShellContent ContentTemplate="{DataTemplate local:MySchedulePage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title = "Lunch Menu" Route="Lunch">
+        <ShellContent ContentTemplate="{DataTemplate local:LunchMenu}"/>
     </FlyoutItem>
     <FlyoutItem Title = "My Teachers" Route="MyTeachers">
         <ShellContent ContentTemplate="{DataTemplate local:TeachersListPage}"/>
