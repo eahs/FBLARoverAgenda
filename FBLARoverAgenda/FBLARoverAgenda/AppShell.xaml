@@ -82,7 +82,7 @@
         <ShellContent ContentTemplate="{DataTemplate local:MySchedulePage}"/>
     </FlyoutItem>
     <FlyoutItem Title = "Lunch Menu" Route="Lunch">
-        <ShellContent ContentTemplate="{DataTemplate local:LunchMenu}"/>
+        <ShellContent ContentTemplate="{DataTemplate local:LunchPage}"/>
     </FlyoutItem>
     <FlyoutItem Title = "My Teachers" Route="MyTeachers">
         <ShellContent ContentTemplate="{DataTemplate local:TeachersListPage}"/>

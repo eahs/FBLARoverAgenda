@@ -216,34 +216,42 @@
 
   "classes": [
     {
-        "name": "English",
-        "block": "Block 1",
-        "room": "C207",
-        "teacher": "Ms. Hudak"
+      "name": "English",
+      "block": "Block 1",
+      "room": "C207",
+      "teacher": "Ms. Hudak"
     },
     {
-        "name": "History",
-        "block": "Block 2",
-        "room": "D202",
-        "teacher": "Mr. Uhler"
+      "name": "History",
+      "block": "Block 2",
+      "room": "D202",
+      "teacher": "Mr. Uhler"
     },
     {
-        "name": "Lunch",
-        "block": "Block 3",
-        "room": "Cafeteria",
-        "teacher": "N/A"
+      "name": "Lunch",
+      "block": "Block 3",
+      "room": "Cafeteria",
+      "teacher": "N/A"
     },
     {
-        "name": "Precalculus",
-        "block": "Block 4",
-        "room": "E109",
-        "teacher": "Ms. Hammerstone"
+      "name": "Precalculus",
+      "block": "Block 4",
+      "room": "E109",
+      "teacher": "Ms. Hammerstone"
     },
     {
-        "name": "Physics",
-        "block": "Block 5",
-        "room": "J215",
-        "teacher": "Mr. Kazan"
+      "name": "Physics",
+      "block": "Block 5",
+      "room": "J215",
+      "teacher": "Mr. Kazan"
+    }
+  ],
+
+  "foods": [
+    {
+      "name": "Apple",
+      "venue": "LovelyApples",
+      "price": "1.09"
     }
   ],
 
