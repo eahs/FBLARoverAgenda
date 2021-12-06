@@ -9,6 +9,7 @@
     xmlns:controls="clr-namespace:FBLARoverAgenda.Controls"
     xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
     x:Name="MyAdressPage"
+    Title="Extracurriculars"
     BackgroundColor="{DynamicResource GrayShadowBackgroundColor}"
     NavigationPage.HasNavigationBar="False">
 

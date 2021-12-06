@@ -12,6 +12,7 @@
     xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
     xmlns:view="clr-namespace:FBLARoverAgenda.Views"
     x:Name="lunchPage"
+    Title="Lunch Menu"
     BackgroundColor="{DynamicResource Gray-100}"
     NavigationPage.HasNavigationBar="False">
 
@@ -95,7 +96,7 @@
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="0"
-                                            Margin="16,8,0,16"
+                                            Margin="16,0,0,4"
                                             FontFamily="Montserrat-SemiBold"
                                             FontSize="14"
                                             HorizontalOptions="StartAndExpand"

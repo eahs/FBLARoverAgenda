@@ -250,8 +250,8 @@
   "foods": [
     {
       "name": "Apple",
-      "venue": "LovelyApples",
-      "price": "1.09"
+      "venue": "Lovely Apples",
+      "price": "$1.09"
     }
   ],
 

@@ -12,6 +12,7 @@
     xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
     xmlns:view="clr-namespace:FBLARoverAgenda.Views"
     x:Name="myOrdersPage"
+    Title="My Schedule"
     BackgroundColor="{DynamicResource Gray-100}"
     NavigationPage.HasNavigationBar="False">
 
