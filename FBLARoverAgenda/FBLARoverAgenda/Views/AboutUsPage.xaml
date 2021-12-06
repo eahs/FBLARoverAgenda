@@ -135,7 +135,7 @@
 
                                 <!--  Employee name  -->
                                 <Label
-                                    FontSize="14"
+                                    FontSize="13"
                                     Style="{StaticResource TitleLabelStyle}"
                                     Text="{Binding EmployeeName}"
                                     TextColor="{DynamicResource Gray-White}" />

@@ -10,6 +10,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="{DynamicResource Gray-Bg}"
+    Title="My Teachers"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
 

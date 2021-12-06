@@ -16,6 +16,9 @@ namespace FBLARoverAgenda
 
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTE1MzQwQDMxMzkyZTMzMmUzMFJpekJYSXZ2M3VrQ1E3dWNLQ3M2Wnp1MEg0Y3pDSVRpVTkrT2hML3JsWEk9");
+
             InitializeComponent();
 
             MainPage = new AppShell();
