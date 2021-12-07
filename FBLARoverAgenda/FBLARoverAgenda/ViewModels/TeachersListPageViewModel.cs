@@ -13,7 +13,7 @@ namespace FBLARoverAgenda.ViewModels
     [DataContract]
     public class TeachersListPageViewModel : BaseViewModel
     {
-        #region MoviesListPage
+        #region TeachersListPage
 
         #region Fields
 
@@ -67,7 +67,7 @@ namespace FBLARoverAgenda.ViewModels
 
         #endregion
 
-        #region MoviesPage
+        #region TeachersPage
 
         #region Fields
 
@@ -86,26 +86,26 @@ namespace FBLARoverAgenda.ViewModels
         /// <summary>
         /// Gets or sets a collection of value to be displayed in the rotator of movies page.
         /// </summary>
-        [DataMember(Name = "rotatorMoviesList")]
-        public ObservableCollection<Movie> RotatorMoviesList { get; set; }
+        [DataMember(Name = "rotatorTeachersList")]
+        public ObservableCollection<Movie> RotatorTeachersList { get; set; }
 
         /// <summary>
         /// Gets or sets a collection of value to be displayed in now showing list of movies page.
         /// </summary>
-        [DataMember(Name = "showingMoviesList")]
-        public ObservableCollection<Movie> NowShowingMoviesList { get; set; }
+        [DataMember(Name = "showingTeaachersList")]
+        public ObservableCollection<Movie> NowShowingTeachersList { get; set; }
 
         /// <summary>
         /// Gets or sets a collection of value to be displayed in the trailer list of movies page.
         /// </summary>
-        [DataMember(Name = "trailerMoviesList")]
-        public ObservableCollection<Movie> TrailerMoviesList { get; set; }
+        [DataMember(Name = "trailerTeachersList")]
+        public ObservableCollection<Movie> TrailerTeachersList { get; set; }
 
         /// <summary>
         /// Gets or sets a collection of value to be displayed in the upcoming movies list of movies page.
         /// </summary>
-        [DataMember(Name = "upcomingMoviesList")]
-        public ObservableCollection<Movie> UpcomingMoviesList { get; set; }
+        [DataMember(Name = "upcomingTeachersList")]
+        public ObservableCollection<Movie> UpcomingTeachersList { get; set; }
 
         #endregion
 

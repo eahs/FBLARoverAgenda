@@ -18,7 +18,7 @@ namespace FBLARoverAgenda.Views
         public MySchedulePage()
         {
             this.InitializeComponent();
-            this.BindingContext = MyOrdersDataService.Instance.MySchedulePageViewModel;
+            this.BindingContext = MyClassesDataService.Instance.MySchedulePageViewModel;
         }
     }
 }

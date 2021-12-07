@@ -7,7 +7,7 @@ using Xamarin.Forms.Internals;
 namespace FBLARoverAgenda.ViewModels
 {
     /// <summary>
-    /// ViewModel for my orders page.
+    /// ViewModel for my classes page.
     /// </summary>
     [Preserve(AllMembers = true)]
     [DataContract]
@@ -15,9 +15,9 @@ namespace FBLARoverAgenda.ViewModels
     {
         #region Fields
 
-        private ObservableCollection<Orders> orderDetails;
+        private ObservableCollection<Class> classDetails;
 
-        private ObservableCollection<Orders> myOrders;
+        private ObservableCollection<Class> myClasses;
 
         private Command itemSelectedCommand;
 
@@ -26,46 +26,46 @@ namespace FBLARoverAgenda.ViewModels
         #region Properties
 
         /// <summary>
-        /// Gets or sets the property that has been bound with list view, which displays the collection of orders from json.
+        /// Gets or sets the property that has been bound with list view, which displays the collection of classes from json.
         /// </summary>
         [DataMember(Name = "classes")]
-        public ObservableCollection<Orders> MyOrders
+        public ObservableCollection<Class> MyClasses
         {
             get
             {
-                return this.myOrders;
+                return this.myClasses;
             }
 
             set
             {
-                if (this.myOrders == value)
+                if (this.myClasses == value)
                 {
                     return;
                 }
 
-                this.SetProperty(ref this.myOrders, value);
-                this.GetProducts(this.MyOrders);
+                this.SetProperty(ref this.myClasses, value);
+                this.GetProducts(this.MyClasses);
             }
         }
 
         /// <summary>
-        /// Gets the property that has been bound with a list view, which displays the order details in list.
+        /// Gets the property that has been bound with a list view, which displays the class details in list.
         /// </summary>
-        public ObservableCollection<Orders> ClassDetails
+        public ObservableCollection<Class> ClassDetails
         {
             get
             {
-                return this.orderDetails;
+                return this.classDetails;
             }
 
             private set
             {
-                if (this.orderDetails == value)
+                if (this.classDetails == value)
                 {
                     return;
                 }
 
-                this.SetProperty(ref this.orderDetails, value);
+                this.SetProperty(ref this.classDetails, value);
             }
         }
 
@@ -101,9 +101,9 @@ namespace FBLARoverAgenda.ViewModels
         /// This method is used to get the ordered items from json.
         /// </summary>
         /// <param name="items">Ordered items</param>
-        private void GetProducts(ObservableCollection<Orders> items)
+        private void GetProducts(ObservableCollection<Class> items)
         {
-            this.ClassDetails = new ObservableCollection<Orders>();
+            this.ClassDetails = new ObservableCollection<Class>();
             if (items != null && items.Count > 0)
             {
                 this.ClassDetails = items;

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="FBLARoverAgenda.Views.MyOrdersView"
+    x:Class="FBLARoverAgenda.Views.MyClassesView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converter="clr-namespace:FBLARoverAgenda.Converters"
@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
     xmlns:template="clr-namespace:FBLARoverAgenda.Views.Templates"
-    x:Name="myOrdersView"
+    x:Name="myClassesView"
     mc:Ignorable="d">
 
     <ContentView.Resources>
@@ -21,9 +21,9 @@
 
     <ContentView.Content>
 
-        <!--  My Order list  -->
+        <!--  My Class list  -->
         <listView:SfListView
-            x:Name="myOrderList"
+            x:Name="myClassList"
             AutoFitMode="DynamicHeight"
             BackgroundColor="{DynamicResource Gray-100}"
             ItemsSource="{Binding ClassDetails}"
