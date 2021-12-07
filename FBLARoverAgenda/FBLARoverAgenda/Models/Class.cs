@@ -8,7 +8,7 @@ namespace FBLARoverAgenda.Models
     /// </summary>
     [Preserve(AllMembers = true)]
     [DataContract]
-    public class Orders
+    public class Class
     {
         #region Fields
 

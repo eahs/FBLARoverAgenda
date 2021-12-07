@@ -9,23 +9,24 @@ namespace FBLARoverAgenda.DataService
     /// Data service to load the data from json file.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class MyOrdersDataService
+    public class MyClassesDataService
     {
         #region fields
 
-        private static MyOrdersDataService myOrdersDataService;
+        private static MyClassesDataService myClassesDataService;
 
-        private MySchedulePageViewModel myOrderPageViewModel;
+        private MySchedulePageViewModel myClassPageViewModel;
 
         #endregion
 
         #region Constructor
 
         /// <summary>
-        /// Creates an instance for the <see cref="MyOrdersDataService"/> class.
+        /// Creates an instance for the <see cref="myClassesDataService"/> class.
         /// </summary>
-        private MyOrdersDataService()
+        private MyClassesDataService()
         {
+            
         }
 
         #endregion
@@ -33,15 +34,15 @@ namespace FBLARoverAgenda.DataService
         #region Properties
 
         /// <summary>
-        /// Gets an instance of the <see cref="MyOrdersDataService"/>.
+        /// Gets an instance of the <see cref="myClassesDataService"/>.
         /// </summary>
-        public static MyOrdersDataService Instance => myOrdersDataService ?? (myOrdersDataService = new MyOrdersDataService());
+        public static MyClassesDataService Instance => myClassesDataService ?? (myClassesDataService = new MyClassesDataService());
 
         /// <summary>
         /// Gets or sets the value of my orders page view model.
         /// </summary>
         public MySchedulePageViewModel MySchedulePageViewModel =>
-            this.myOrderPageViewModel = PopulateData<MySchedulePageViewModel>("ecommerce.json");
+            this.myClassPageViewModel = PopulateData<MySchedulePageViewModel>("ecommerce.json");
 
         #endregion
 
