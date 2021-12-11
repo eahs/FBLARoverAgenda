@@ -26,18 +26,7 @@
         <ControlTemplate>
             <StackLayout Spacing="0">
                 <!--  Title View  -->
-                <control:TitleView Title="Lunch Menu">
-                    <control:TitleView.LeadingView>
-                        <buttons:SfButton
-                            x:Name="backButton"
-                            Command="{Binding BindingContext.BackButtonCommand, Source={x:Reference myOrderList}}"
-                            CommandParameter="{x:Reference backButton}"
-                            CornerRadius="20"
-                            Style="{StaticResource IconButtonStyle}"
-                            Text="{StaticResource Back}" />
-                    </control:TitleView.LeadingView>
-
-                </control:TitleView>
+                
 
                 <ContentPresenter />
             </StackLayout>

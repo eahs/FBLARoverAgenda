@@ -38,21 +38,13 @@
                     Spacing="0"
                     VerticalOptions="FillAndExpand">
 
-                    <!--  Back button command  -->
-                    <buttons:SfButton
-                        x:Name="backButton"
-                        Command="{Binding BackButtonCommand}"
-                        CommandParameter="{x:Reference backButton}"
-                        Style="{StaticResource IconButtonStyle}"
-                        Text="{StaticResource Back}" />
-
                     <!--  Movie List page Title  -->
                     <Label
                         Margin="16,0"
                         FontFamily="Montserrat-Medium"
                         HorizontalOptions="FillAndExpand"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="Teachers"
+                        Text=""
                         VerticalOptions="Center"
                         VerticalTextAlignment="Center" />
 

@@ -17,17 +17,7 @@
         <ControlTemplate>
             <StackLayout Spacing="0">
                 <!--  Title View  -->
-                <control:TitleView Title="About Us">
-                    <!--  Back button command  -->
-                    <control:TitleView.LeadingView>
-                        <buttons:SfButton
-                            x:Name="backButton"
-                            Command="{Binding BindingContext.BackButtonCommand, Source={x:Reference aboutUsScrollPage}}"
-                            CommandParameter="{x:Reference backButton}"
-                            Style="{StaticResource IconButtonStyle}"
-                            Text="{StaticResource Back}" />
-                    </control:TitleView.LeadingView>
-                </control:TitleView>
+                
                 <ContentPresenter />
             </StackLayout>
         </ControlTemplate>
@@ -61,7 +51,7 @@
                         LineHeight="{OnPlatform Android=1.25,
                                                 Default=-1}"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="About Us"
+                        Text=""
                         TextColor="#333942" />
 
                     <!--  Product description  -->

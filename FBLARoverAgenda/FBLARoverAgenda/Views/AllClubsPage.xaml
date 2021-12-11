@@ -16,18 +16,7 @@
     <ContentPage.ControlTemplate>
         <ControlTemplate>
             <StackLayout x:Name="titleLayout" Spacing="0">
-                <controls:TitleView Title="Extracurriculars">
-                    <controls:TitleView.LeadingView>
-                        <!--  Back button command  -->
-                        <buttons:SfButton
-                            x:Name="backButton"
-                            Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference MyAdressPage}}"
-                            CommandParameter="{x:Reference backButton}"
-                            Style="{StaticResource IconButtonStyle}"
-                            Text="{StaticResource Back}" />
-
-                    </controls:TitleView.LeadingView>
-                </controls:TitleView>
+                
                 <ContentPresenter />
             </StackLayout>
         </ControlTemplate>

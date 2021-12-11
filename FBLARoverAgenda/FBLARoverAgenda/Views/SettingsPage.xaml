@@ -109,37 +109,7 @@
                 </controls:TapAnimationGrid>
                 <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
 
-                <!--  Grid for Account link label and navigation bar icon  -->
-                <controls:TapAnimationGrid
-                    BackgroundColor="{DynamicResource Gray-Bg}"
-                    ColumnDefinitions="Auto, *, Auto"
-                    ColumnSpacing="0"
-                    Command="{Binding LinkAccountCommand}"
-                    RowSpacing="0"
-                    Tapped="False">
-
-                    <!--  Link account icon  -->
-                    <Label
-                        Grid.Column="0"
-                        Margin="16,0,0,0"
-                        Style="{StaticResource IconLabelStyle}"
-                        Text="{StaticResource Share}" />
-                    <!--  Link account label  -->
-                    <Label
-                        Grid.Column="1"
-                        Margin="16,12"
-                        FontFamily="Montserrat-Medium"
-                        HorizontalOptions="Start"
-                        Style="{StaticResource TitleLabelStyle}"
-                        Text="Link Account"
-                        VerticalOptions="Center" />
-                    <!--  Navigation icon  -->
-                    <Label
-                        Grid.Column="2"
-                        Margin="16,8"
-                        Style="{StaticResource IconLabelStyle}"
-                        Text="{StaticResource Next}" />
-                </controls:TapAnimationGrid>
+                
 
                 <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
 
@@ -314,7 +284,7 @@
                         Grid.Column="0"
                         Margin="16,0,0,0"
                         Style="{StaticResource IconLabelStyle}"
-                        Text="{StaticResource Help}" />
+                        Text="{StaticResource Error}" />
                     <!--  Help text label  -->
                     <Label
                         Grid.Column="1"
@@ -322,7 +292,7 @@
                         FontFamily="Montserrat-Medium"
                         HorizontalOptions="Start"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="Help"
+                        Text="Report a Bug"
                         VerticalOptions="Center" />
                     <!--  Navigation icon  -->
                     <Label
@@ -333,38 +303,7 @@
                 </controls:TapAnimationGrid>
                 <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
 
-                <!--  Grid for Terms of service label and navigation bar icon  -->
-                <controls:TapAnimationGrid
-                    BackgroundColor="{DynamicResource Gray-Bg}"
-                    ColumnDefinitions="Auto, *, Auto"
-                    ColumnSpacing="0"
-                    Command="{Binding TermsCommand}"
-                    RowSpacing="0"
-                    Tapped="False">
-
-                    <!--  Terms of service icon  -->
-                    <Label
-                        Grid.Column="0"
-                        Margin="16,0,0,0"
-                        Style="{StaticResource IconLabelStyle}"
-                        Text="{StaticResource Account}" />
-                    <!--  Terms of service label  -->
-                    <Label
-                        Grid.Column="1"
-                        Margin="16,12"
-                        FontFamily="Montserrat-Medium"
-                        HorizontalOptions="Start"
-                        Style="{StaticResource TitleLabelStyle}"
-                        Text="Terms of Service"
-                        VerticalOptions="Center" />
-                    <!--  Navigation icon  -->
-                    <Label
-                        Grid.Column="2"
-                        Margin="16,8"
-                        Style="{StaticResource IconLabelStyle}"
-                        Text="{StaticResource Next}" />
-                </controls:TapAnimationGrid>
-                <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
+                
 
                 <!--  Grid for Privacy policy label and navigation bar icon  -->
                 <controls:TapAnimationGrid

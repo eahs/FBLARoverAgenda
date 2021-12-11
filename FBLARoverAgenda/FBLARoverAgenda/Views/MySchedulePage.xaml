@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+    <ContentPage
     x:Class="FBLARoverAgenda.Views.MySchedulePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -26,42 +26,30 @@
         <ControlTemplate>
             <StackLayout Spacing="0">
                 <!--  Title View  -->
-                <control:TitleView Title="My Schedule">
-                    <control:TitleView.LeadingView>
-                        <buttons:SfButton
-                            x:Name="backButton"
-                            Command="{Binding BindingContext.BackButtonCommand, Source={x:Reference myOrderList}}"
-                            CommandParameter="{x:Reference backButton}"
-                            CornerRadius="20"
-                            Style="{StaticResource IconButtonStyle}"
-                            Text="{StaticResource Back}" />
-                    </control:TitleView.LeadingView>
-
-                </control:TitleView>
+                
 
                 <ContentPresenter />
             </StackLayout>
         </ControlTemplate>
     </ContentPage.ControlTemplate>
 
-
     <ContentPage.Content>
+        <Grid>
+            <tabView:SfTabView BackgroundColor="{DynamicResource Gray-Bg}" VisibleHeaderCount="4">
+                <tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SelectionIndicatorSettings StrokeThickness="3" Color="{DynamicResource PrimaryColor}" />
 
-        <tabView:SfTabView BackgroundColor="{DynamicResource Gray-Bg}" VisibleHeaderCount="4">
-            <tabView:SfTabView.SelectionIndicatorSettings>
-                <tabView:SelectionIndicatorSettings StrokeThickness="3" Color="{DynamicResource PrimaryColor}" />
-
-            </tabView:SfTabView.SelectionIndicatorSettings>
-            <tabView:SfTabItem
+                </tabView:SfTabView.SelectionIndicatorSettings>
+                <tabView:SfTabItem
                 Title="Monday"
                 SelectionColor="{DynamicResource PrimaryColor}"
                 TitleFontColor="{DynamicResource Gray-700}"
                 TitleFontFamily="Montserrat-Medium"
                 TitleFontSize="14">
-                <tabView:SfTabItem.Content>
+                    <tabView:SfTabItem.Content>
 
-                    <!--  My Order list  -->
-                    <listView:SfListView
+                        <!--  My Order list  -->
+                        <listView:SfListView
                         x:Name="myOrderList"
                         AutoFitMode="DynamicHeight"
                         BackgroundColor="{DynamicResource Gray-100}"
@@ -69,30 +57,30 @@
                         SelectionMode="None"
                         VerticalOptions="Start">
 
-                        <listView:SfListView.ItemTemplate>
-                            <DataTemplate>
-                                <syncEffectsView:SfEffectsView
+                            <listView:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <syncEffectsView:SfEffectsView
                                     Margin="0,16,0,0"
                                     RippleColor="{DynamicResource Gray-300}"
                                     TouchDownEffects="Ripple"
                                     TouchUpCommand="{Binding Path=BindingContext.ItemSelectedCommand, Source={x:Reference myOrdersPage}}"
                                     TouchUpCommandParameter="{Binding}">
-                                    <Grid
+                                        <Grid
                                         BackgroundColor="{DynamicResource Gray-Bg}"
                                         ColumnDefinitions="Auto, *"
                                         ColumnSpacing="0"
                                         RowSpacing="0">
 
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="{OnIdiom Default=1, Phone=0}" />
-                                        </Grid.RowDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="{OnIdiom Default=1, Phone=0}" />
+                                            </Grid.RowDefinitions>
 
-                                        <!--  Class name  -->
-                                        <Label
+                                            <!--  Class name  -->
+                                            <Label
                                             Grid.Row="0"
                                             Grid.Column="0"
                                             Margin="16,8,0,16"
@@ -105,8 +93,8 @@
                                             Text="{Binding Name}"
                                             TextColor="{DynamicResource Gray-900}" />
 
-                                        <!--  Block #  -->
-                                        <Label
+                                            <!--  Block #  -->
+                                            <Label
                                             Grid.Row="1"
                                             Grid.Column="0"
                                             Margin="16,0,0,4"
@@ -117,8 +105,8 @@
                                             Text="{Binding Block}"
                                             TextColor="{DynamicResource Gray-700}" />
 
-                                        <!--  Room  -->
-                                        <Label
+                                            <!--  Room  -->
+                                            <Label
                                             Grid.Row="2"
                                             Grid.Column="0"
                                             Margin="16,0,0,4"
@@ -129,8 +117,8 @@
                                             Text="{Binding Room}"
                                             TextColor="{DynamicResource Gray-700}" />
 
-                                        <!--  Teacher  -->
-                                        <Label
+                                            <!--  Teacher  -->
+                                            <Label
                                             Grid.Row="3"
                                             Grid.Column="0"
                                             Margin="16,0,0,16"
@@ -140,62 +128,77 @@
                                             LineHeight="1.5"
                                             Text="{Binding Teacher}"
                                             TextColor="{DynamicResource Gray-700}" />
-                                    </Grid>
-                                </syncEffectsView:SfEffectsView>
-                            </DataTemplate>
-                        </listView:SfListView.ItemTemplate>
+                                        </Grid>
+                                    </syncEffectsView:SfEffectsView>
+                                </DataTemplate>
+                            </listView:SfListView.ItemTemplate>
 
-                    </listView:SfListView>
-                </tabView:SfTabItem.Content>
-            </tabView:SfTabItem>
+                        </listView:SfListView>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
 
-            <tabView:SfTabItem
+                <tabView:SfTabItem
                 Title="Tuesday"
                 SelectionColor="{DynamicResource PrimaryColor}"
                 TitleFontColor="{DynamicResource Gray-700}"
                 TitleFontFamily="Montserrat-Medium"
                 TitleFontSize="14">
-                <tabView:SfTabItem.Content>
-                    <view:MyOrdersView />
-                </tabView:SfTabItem.Content>
-            </tabView:SfTabItem>
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
 
-            <tabView:SfTabItem
+                <tabView:SfTabItem
                 Title="Wednesday"
                 SelectionColor="{DynamicResource PrimaryColor}"
                 TitleFontColor="{DynamicResource Gray-700}"
                 TitleFontFamily="Montserrat-Medium"
                 TitleFontSize="14">
-                <tabView:SfTabItem.Content>
-                    <view:MyOrdersView />
-                </tabView:SfTabItem.Content>
-            </tabView:SfTabItem>
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
 
-            <tabView:SfTabItem
+                <tabView:SfTabItem
                 Title="Thursday"
                 SelectionColor="{DynamicResource PrimaryColor}"
                 TitleFontColor="{DynamicResource Gray-700}"
                 TitleFontFamily="Montserrat-Medium"
                 TitleFontSize="14">
-                <tabView:SfTabItem.Content>
-                    <view:MyOrdersView />
-                </tabView:SfTabItem.Content>
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
 
-            </tabView:SfTabItem>
+                </tabView:SfTabItem>
 
-            <tabView:SfTabItem
+                <tabView:SfTabItem
                 Title="Friday"
                 SelectionColor="{DynamicResource PrimaryColor}"
                 TitleFontColor="{DynamicResource Gray-700}"
                 TitleFontFamily="Montserrat-Medium"
                 TitleFontSize="14">
-                <tabView:SfTabItem.Content>
-                    <view:MyOrdersView />
-                </tabView:SfTabItem.Content>
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
 
-            </tabView:SfTabItem>
+                </tabView:SfTabItem>
 
-        </tabView:SfTabView>
+            </tabView:SfTabView>
+            <buttons:SfButton
+            Margin="300,650,0,32"
+            Command="{Binding LogoutCommand}"
+            FontFamily="FontIcons"
+            FontSize="30"
+            Style="{StaticResource GradientButtonStyle}"
+            Text="{StaticResource Edit}"
+            WidthRequest="60" 
+            HeightRequest="60"
+            CornerRadius="30"/>
+        </Grid>
 
     </ContentPage.Content>
+    <!--  Logout button  
+        
+    -->
+
 </ContentPage>

@@ -78,6 +78,24 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="White"
+                  HeightRequest="200">
+                <Image Aspect="AspectFill"
+                       Source="RoverAgendaIcon1.png"
+                       Opacity="0.6" />
+                <Label Text="R"
+                       FontSize="150"
+                       TextColor="{DynamicResource PrimaryColor}"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
     <FlyoutItem Title = "Schedule" Route="Schedule">
         <ShellContent ContentTemplate="{DataTemplate local:MySchedulePage}"/>
     </FlyoutItem>
