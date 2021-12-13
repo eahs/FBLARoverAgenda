@@ -138,9 +138,10 @@ namespace FBLARoverAgenda.ViewModels
         /// Invoked when the Forgot Password button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void ForgotPasswordClicked(object obj)
+        private async void ForgotPasswordClicked(object obj)
         {
             // Do something
+            await Shell.Current.GoToAsync("//ResetPasswordPage");
         }
 
         /// <summary>

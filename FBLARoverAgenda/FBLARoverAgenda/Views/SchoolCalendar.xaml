@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FBLARoverAgenda.Views.SchoolCalendar"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:FBLARoverAgenda.Controls"
+    xmlns:converter="clr-namespace:FBLARoverAgenda.Converters"
+    xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+    xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+    xmlns:view="clr-namespace:FBLARoverAgenda.Views"
+    x:Name="schoolCalendar"
+    Title="School Calendar"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:StringToColorConverter x:Key="StringToColorConverter" />
+            <Style x:Key="DayStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Gray-700}"/>
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+            <Style x:Key="DayFrame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="40"/>
+                <Setter Property="WidthRequest" Value="45"/>
+                <Setter Property="HeightRequest" Value="45"/>
+                <Setter Property="FlexLayout.Basis" Value="60"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource Gray-100}"/>
+                <Setter Property="BorderColor" Value="Red"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+            <Style x:Key="TransparentFrame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="40"/>
+                <Setter Property="WidthRequest" Value="45"/>
+                <Setter Property="HeightRequest" Value="45"/>
+                <Setter Property="FlexLayout.Basis" Value="60"/>
+                <Setter Property="FlexLayout.HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource Gray-100}"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0">
+                <ContentPresenter />
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <Grid>
+            <tabView:SfTabView BackgroundColor="{DynamicResource Gray-Bg}" VisibleHeaderCount="1">
+                <tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SelectionIndicatorSettings StrokeThickness="3" Color="{DynamicResource PrimaryColor}" />
+                </tabView:SfTabView.SelectionIndicatorSettings>
+                <tabView:SfTabItem
+                Title="September"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.5*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Frame Style="{StaticResource DayFrame}">
+                                <Label Style="{StaticResource DayStyle}" Text="S" />
+                            </Frame>
+                            <Frame Style="{StaticResource DayFrame}" Grid.Column="1">
+                                <Label Style="{StaticResource DayStyle}" Text="M" />
+                            </Frame>
+                            <Frame Style="{StaticResource DayFrame}" Grid.Column="2">
+                                <Label Style="{StaticResource DayStyle}" Text="T" />
+                            </Frame>
+                            <Frame Style="{StaticResource DayFrame}" Grid.Column="3">
+                                <Label Style="{StaticResource DayStyle}" Text="W" />
+                            </Frame>
+                            <Frame Style="{StaticResource DayFrame}" Grid.Column="4">
+                                <Label Style="{StaticResource DayStyle}" Text="T" />
+                            </Frame>
+                            <Frame Style="{StaticResource DayFrame}" Grid.Column="5">
+                                <Label Style="{StaticResource DayStyle}" Text="F" />
+                            </Frame>
+                            <Frame Style="{StaticResource DayFrame}" Grid.Column="6">
+                                <Label Style="{StaticResource DayStyle}" Text="S" />
+                            </Frame>
+                            <ScrollView Grid.ColumnSpan="7" Grid.Row="1">
+                            <FlexLayout JustifyContent="SpaceEvenly" AlignContent="Start" Wrap="Wrap" >
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="1" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="2" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="3" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="4" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="5" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="6" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="7" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="8" />
+                                </Frame>
+                                <Frame Style="{StaticResource TransparentFrame}">
+                                    <Label Style="{StaticResource DayStyle}" Text="9" />
+                                </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="11" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="12" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="13" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="14" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="15" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="16" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="17" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="18" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="19" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="20" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="21" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="22" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="23" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="24" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="25" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="26" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="27" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="28" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="29" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="30" />
+                                    </Frame>
+
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="" />
+                                    </Frame>
+                                    <Frame Style="{StaticResource TransparentFrame}">
+                                        <Label Style="{StaticResource DayStyle}" Text="" />
+                                    </Frame>
+
+                                </FlexLayout>
+                            </ScrollView>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="October"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="November"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="December"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="January"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="February"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="March"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="April"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="May"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem
+                Title="June"
+                SelectionColor="{DynamicResource PrimaryColor}"
+                TitleFontColor="{DynamicResource Gray-700}"
+                TitleFontFamily="Montserrat-Medium"
+                TitleFontSize="14">
+                    <tabView:SfTabItem.Content>
+                        <view:MyOrdersView />
+                    </tabView:SfTabItem.Content>
+
+                </tabView:SfTabItem>
+
+            </tabView:SfTabView>
+        </Grid>
+
+    </ContentPage.Content>
+    <!--  Logout button  
+        <buttons:SfButton
+            Margin="300,650,0,32"
+            Command="{Binding LogoutCommand}"
+            FontFamily="FontIcons"
+            FontSize="30"
+            Style="{StaticResource GradientButtonStyle}"
+            Text="{StaticResource Edit}"
+            WidthRequest="60" 
+            HeightRequest="60"
+            CornerRadius="30"/>
+        
+    -->
+
+</ContentPage>

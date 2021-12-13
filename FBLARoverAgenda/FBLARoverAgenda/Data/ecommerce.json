@@ -249,9 +249,34 @@
 
   "foods": [
     {
-      "name": "Apple",
-      "venue": "Lovely Apples",
-      "price": "$1.09"
+      "name": "Meatball Sub",
+      "venue": "Helly's Kitchen",
+      "price": "$5"
+    },
+    {
+      "name": "Mac and Cheese",
+      "venue": "Helly's Kitchen",
+      "price": "$5"
+    },
+    {
+      "name": "Beef and Cheese Burrito",
+      "venue": "Helly's Kitchen",
+      "price": "$5"
+    },
+    {
+      "name": "Cheese and Nachos",
+      "venue": "Helly's Kitchen",
+      "price": "$5"
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "venue": "Helly's Kitchen",
+      "price": "$5"
+    },
+    {
+      "name": "Three Cheese Pizza",
+      "venue": "Helly's Kitchen",
+      "price": "$5"
     }
   ],
 

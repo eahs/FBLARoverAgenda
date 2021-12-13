@@ -13,10 +13,11 @@
     xmlns:local="clr-namespace:FBLARoverAgenda.Views"
     xmlns:viewModel="clr-namespace:FBLARoverAgenda.ViewModels"
     Title="Sign Up"
-    BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
-                                                                  iOSPhoneLandscape=LoginBackground-Landscape.png,
-                                                                  iOSTabletLandscape=LoginBackground-Landscape.png}"
     NavigationPage.HasNavigationBar="False">
+    <!--BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
+                                                                  iOSPhoneLandscape=LoginBackground-Landscape.png,
+                                                                  iOSTabletLandscape=LoginBackground-Landscape.png}" -->
+    
 
     <ContentPage.Resources>
         <ResourceDictionary>
